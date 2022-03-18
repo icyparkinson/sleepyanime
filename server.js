@@ -1,14 +1,14 @@
 const express = require("express")
 const app = express()
 const cors = require("cors")
-const { MongoClient } = require("mongodb")
-const { response } = require("express")
+// const { MongoClient } = require("mongodb")
+// const { response } = require("express")
 const PORT = 8000
 
 app.use(cors())
 
 let db,
-    dbConnectionStr = "mongodb+srv://icyparkinson:4mango@cluster0.8igav.mongodb.net/anime?retryWrites=true&w=majority",
+    dbConnectionStr = "mongodb+srv://icyparkinson:mango4@cluster0.8igav.mongodb.net/anime?retryWrites=true&w=majority",
     dbName = anime
 
 MongoClient.connect(dbConnectionStr, {useUnifiedTopology: true })
@@ -79,7 +79,7 @@ app.post("/addAnime", (req, res) => {
     db.collection("anime").insertOne(req.body)
     .then(result => {
         console.log("Anime added")
-        response.redirect("/")
+        res.redirect("/")
     })
     .catch(error => console.error(error))
 })
