@@ -1,17 +1,14 @@
 const express = require("express")
 const app = express()
-const cors = require("cors")
 const MongoClient = require("mongodb").MongoClient
-require('dotenv').config()
-
 const PORT = 8000
 
-// app.use(cors())
 
 let db,
-    dbConnectionStr = "mongodb+srv://icyparkinson:demo@cluster0.8igav.mongodb.net/anime?retryWrites=true&w=majority",
+    dbConnectionStr = "mongodb+srv://demo:demo@cluster0.8igav.mongodb.net/anime?retryWrites=true&w=majority",
     dbName = "anime"
 
+    
 MongoClient.connect(dbConnectionStr, {useUnifiedTopology: true })
     .then (client => {
         console.log(`Connected to ${dbName} Database`)
@@ -64,16 +61,16 @@ app.get("/", (req, res) => {
 })
 
 
-app.get("/api/anime/:animeTitle", (req, res) => {
-    const title = req.params.animeTitle.toLowerCase()
-    console.log(title)
-    if(anime[title]){
-        res.json(anime[title])
-    } else{
-        res.json(anime["unknown"])
-    }
+// app.get("/api/anime/:animeTitle", (req, res) => {
+//     const title = req.params.animeTitle.toLowerCase()
+//     console.log(title)
+//     if(anime[title]){
+//         res.json(anime[title])
+//     } else{
+//         res.json(anime["unknown"])
+//     }
 
-})
+// })
 
 
 app.post("/addAnime", (req, res) => {

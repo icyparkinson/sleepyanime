@@ -1,4 +1,12 @@
-<html>        
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sleepy Sub Sunday Anime List</title>
+    </head>        
       <body>  
         <h1>Sleepy Sub Sunday Anime List</h1>
         <ul class = "animeList">
@@ -9,11 +17,12 @@
                 <span><%= info[i].episodes %></span>
                 <span><%= info[i].selector %></span>
                 <span><%= info[i].startDate %></span>
+                <span class = "del">Delete</span>
             </li>
         <% } %>
         </ul>
 
-        <h2> Add an anime:</h2>
+        <h2> Add an Anime:</h2>
 
         <form action ="/addAnime" method = "POST">
             <input type ="text" placeholder = "ID" name = "id">
