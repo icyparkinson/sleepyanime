@@ -1,15 +1,16 @@
 const express = require("express")
 const app = express()
 const cors = require("cors")
-// const { MongoClient } = require("mongodb")
-// const { response } = require("express")
+const MongoClient = require("mongodb").MongoClient
+require('dotenv').config()
+
 const PORT = 8000
 
-app.use(cors())
+// app.use(cors())
 
 let db,
-    dbConnectionStr = "mongodb+srv://icyparkinson:mango4@cluster0.8igav.mongodb.net/anime?retryWrites=true&w=majority",
-    dbName = anime
+    dbConnectionStr = "mongodb+srv://icyparkinson:demo@cluster0.8igav.mongodb.net/anime?retryWrites=true&w=majority",
+    dbName = "anime"
 
 MongoClient.connect(dbConnectionStr, {useUnifiedTopology: true })
     .then (client => {
@@ -24,30 +25,30 @@ app.use(express.urlencoded({ extended: true}))
 app.use(express.json())
 
 
-let anime ={
-    "ggo" : {
-        "id" : 1,
-        "title" : "Sword Art Online Alternative: Gun Gale Online",
-        "episodes" : 12,
-        "selector" : "Sleepy",
-        "startDate" : "August 12, 2018",
-    },
-    "classroom elite" : { 
-        "id" : 2,
-        "title" : "Classroom of the Elite",
-        "episodes" : 12,
-        "selector" : "Lukas",
-        "startDate" : "August 26, 2018",
-    },
-    "unknown" : {
-        "id" : 0,
-        "title" : "unknown",
-        "episodes" : 0,
-        "selector" : "unknown",
-        "startDate" : "unknown",
-    }
+// let anime ={
+//     "ggo" : {
+//         "id" : 1,
+//         "title" : "Sword Art Online Alternative: Gun Gale Online",
+//         "episodes" : 12,
+//         "selector" : "Sleepy",
+//         "startDate" : "August 12, 2018",
+//     },
+//     "classroom elite" : { 
+//         "id" : 2,
+//         "title" : "Classroom of the Elite",
+//         "episodes" : 12,
+//         "selector" : "Lukas",
+//         "startDate" : "August 26, 2018",
+//     },
+//     "unknown" : {
+//         "id" : 0,
+//         "title" : "unknown",
+//         "episodes" : 0,
+//         "selector" : "unknown",
+//         "startDate" : "unknown",
+//     }
   
-}
+// }
 
 
 // app.get("/", (req, res) => {
@@ -57,7 +58,7 @@ let anime ={
 app.get("/", (req, res) => {
     db.collection("anime").find().toArray()
     .then(data => {
-        response.render("index.ejs", { info: data })
+        res.render("index.ejs", { info: data })
     })
     .catch(error => console.error(error))
 })
