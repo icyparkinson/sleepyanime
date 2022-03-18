@@ -1,0 +1,29 @@
+<html>        
+      <body>  
+        <h1>Sleepy Sub Sunday Anime List</h1>
+        <ul class = "animeList">
+        <% for (let i = 0; i < info.length; i++) {%>
+            <li class = "anime">
+                <span><%= info[i].id %></span>
+                <span><%= info[i].title %></span>
+                <span><%= info[i].episodes %></span>
+                <span><%= info[i].selector %></span>
+                <span><%= info[i].startDate %></span>
+            </li>
+        <% } %>
+        </ul>
+
+        <h2> Add an anime:</h2>
+
+        <form action ="/addAnime" method = "POST">
+            <input type ="text" placeholder = "ID" name = "id">
+            <input type ="text" placeholder = "Title" name = "title">
+            <input type ="text" placeholder = "Episodes" name = "episodes">
+            <input type ="text" placeholder = "Selector" name = "selector">
+            <input type ="text" placeholder = "Start Date" name = "startDate">
+            <input type = "submit">
+        </form>
+
+        <script src ="main.js"></script>
+    </body>
+</html>
