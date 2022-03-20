@@ -2,6 +2,7 @@ const express = require("express")
 const app = express()
 const MongoClient = require("mongodb").MongoClient
 const PORT = 8000
+const axios = require("axios")
 
 
 let db,
@@ -20,6 +21,11 @@ app.set("view engine", "ejs")
 app.use(express.static("public"))
 app.use(express.urlencoded({ extended: true}))
 app.use(express.json())
+
+// let cursor = db.collection("anime").find({})
+// cursor.each(function (err, data){
+//     console.log(data)
+// })
 
 
 // let anime ={
@@ -53,12 +59,18 @@ app.use(express.json())
 // })
 
 app.get("/", (req, res) => {
-    db.collection("anime").find().toArray()
+    db.collection("anime").find({}).toArray()
     .then(data => {
+        console.log(data[0])
         res.render("index.ejs", { info: data })
     })
     .catch(error => console.error(error))
 })
+
+// axios.get("https://api.jikan.moe/v4/anime/43608")
+//           .then(data => console.log(data)) 
+
+
 
 
 // app.get("/api/anime/:animeTitle", (req, res) => {
@@ -71,6 +83,8 @@ app.get("/", (req, res) => {
 //     }
 
 // })
+
+
 
 
 app.post("/addAnime", (req, res) => {

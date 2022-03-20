@@ -14,7 +14,6 @@
             <li class = "anime">
                 <span><%= info[i].id %></span>
                 <span><%= info[i].title %></span>
-                <span><%= info[i].episodes %></span>
                 <span><%= info[i].selector %></span>
                 <span><%= info[i].startDate %></span>
                 <span class = "del">Delete</span>
@@ -24,14 +23,23 @@
 
         <h2> Add an Anime:</h2>
 
-        <form action ="/addAnime" method = "POST">
+        <form id = "form" action ="/addAnime" method = "POST">
             <input type ="text" placeholder = "ID" name = "id">
-            <input type ="text" placeholder = "Title" name = "title">
-            <input type ="text" placeholder = "Episodes" name = "episodes">
             <input type ="text" placeholder = "Selector" name = "selector">
             <input type ="text" placeholder = "Start Date" name = "startDate">
-            <input type = "submit">
+            <input type ="text" placeholder = "Link here" id = "link">
+            <input type ="submit">
+            <button type = "button" id = "animeButton">Submit</button>
         </form>
+
+        <!-- <h3>Anime stuff Here</h3> -->
+		
+		
+		
+
+        
+
+  
 
         <script src ="main.js"></script>
     </body>
