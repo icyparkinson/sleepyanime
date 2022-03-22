@@ -25,6 +25,8 @@ async function deleteAnime(){
     }
 } 
 
+
+
 document.querySelector("#animeButton").addEventListener("click", addNumber)
 
 async function addNumber(){
@@ -33,17 +35,17 @@ async function addNumber(){
     console.log(link)
     let numberID = link.split("/")[4]
     console.log(numberID)
-    
-    let body = JSON.stringify({
-        animeId: 4040
-     })
+    let animeSel = document.querySelector("#selector").value
+    let animeDate = document.querySelector("#date").value
      
      await fetch('/addAnime', {
          
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
-        "animeId": numberID
+        "animeId": numberID,
+        "selector" : animeSel,
+        "startDate" : animeDate,
      }) 
     }
      )}

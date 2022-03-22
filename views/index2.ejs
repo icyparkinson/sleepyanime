@@ -12,8 +12,15 @@
       <body>  
         <h1>Sleepy Sub Sunday Anime List</h1>
         <ul class = "animeList">
+        <% for (let i = 0; i < info.length; i++) {%>
             <li class = "anime">
-            <span><%= animeData %></span>
+                <span><%= info[i].id %></span>
+                <span><%= info[i].title %></span>
+                <span><%= info[i].selector %></span>
+                <span><%= info[i].startDate %></span>
+                <span class = "del">Delete</span>
+            </li>
+        <% } %>
 
    
        
