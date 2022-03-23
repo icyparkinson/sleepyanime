@@ -7,14 +7,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="data:;base64,=">
-        <title>Sleepy Sub Sunday Anime List</title>
+        <title>Sleepy Anime List</title>
     </head>        
       <body>  
-        <h1>Sleepy Sub Sunday Anime List</h1>
+        <h1>Sleepy Anime List</h1>
         <ul class = "animeList">
-            <li class = "anime">
-            <span><%= animeData %></span>
 
+
+            <% for (let i = 0; i < animeData.length; i++) {%>
+                <li class = "anime">
+                <span><%= animeData[i].data.title %></span>
+                </li>
+<% } %>
    
        
         </ul>

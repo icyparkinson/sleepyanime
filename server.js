@@ -45,17 +45,42 @@ app.use(express.json())
 // THIS SUCCESSFULLY FETCHES TITLE FOR EJS TO USE AND PULLS MAL ID FROM DB!
 app.get("/", (req,res) => {
         db.collection("anime").find({}).toArray()
-            .then(data => {
-                let malID = data[0].animeId
-                console.log(malID)
-                
-                const fetchData = axios.get(`https://api.jikan.moe/v4/anime/${malID}`)   
-                .then(anime => {
-                        const animeData = anime.data.data.title
-                        res.render ("index.ejs", { animeData })
-                    })
+            .then (data => {
+
+                for (let i = 0; i < data.length; i++){
+
+                    let malID = data[i].animeId
+                     console.log(malID)
+                }
             })
-            .catch(error => console.error(error))
+                
+            //          const fetchData = await axios.get(`https://api.jikan.moe/v4/anime/${malID}`)   
+            //             .then(anime => {
+                            
+            //                 animeData.push(anime.data.data.title)
+            //                 console.log(animeData)
+                        
+            //         })
+
+            //     } res.render ("index.ejs", { animeData })
+                
+            // })
+            // .catch(error => console.error(error))
+
+            let path = 'https://api.jikan.moe/v4/anime/'
+            let ids = ['1000', '1001', '1002']
+              .map(elt => 
+              new Promise((resolve, reject) => 
+              resolve(axios.get(path + elt)
+              .then(elt => elt.data)
+              )
+              )
+              )
+            
+            Promise.all(ids)
+              .then(animeData => res.render('index.ejs', {animeData}))
+            
+
         })
 
 
