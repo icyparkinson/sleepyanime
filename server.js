@@ -3,6 +3,7 @@ const app = express()
 const MongoClient = require("mongodb").MongoClient
 const PORT = 8000
 const axios = require("axios")
+const { response } = require("express")
 
 
 let db,
@@ -43,16 +44,17 @@ app.use(express.json())
 // =============================================================
 
 // THIS SUCCESSFULLY FETCHES TITLE FOR EJS TO USE AND PULLS MAL ID FROM DB!
-app.get("/", (req,res) => {
-        db.collection("anime").find({}).toArray()
-            .then (data => {
+// app.get("/", (req,res) => {
+//         db.collection("anime").find({}).toArray()
+//             .then (data => {
 
-                for (let i = 0; i < data.length; i++){
+//                 for (let i = 0; i < data.length; i++){
 
-                    let malID = data[i].animeId
-                     console.log(malID)
-                }
-            })
+//                     let malID = data[i].animeId
+                    //  console.log(malID)
+                     
+            //     }
+            // })
                 
             //          const fetchData = await axios.get(`https://api.jikan.moe/v4/anime/${malID}`)   
             //             .then(anime => {
@@ -67,28 +69,28 @@ app.get("/", (req,res) => {
             // })
             // .catch(error => console.error(error))
 
-            let path = 'https://api.jikan.moe/v4/anime/'
-            let ids = ['1000', '1001', '1002']
-              .map(elt => 
-              new Promise((resolve, reject) => 
-              resolve(axios.get(path + elt)
-              .then(elt => elt.data)
-              )
-              )
-              )
+        //     let path = 'https://api.jikan.moe/v4/anime/'
+        //     let ids = ['1000', '1001', '1002']
+        //       .map(elt => 
+        //       new Promise((resolve, reject) => 
+        //       resolve(axios.get(path + elt)
+        //       .then(elt => elt.data)
+        //       )
+        //       )
+        //       )
             
-            Promise.all(ids)
-              .then(animeData => res.render('index.ejs', {animeData}))
+        //     Promise.all(ids)
+        //       .then(animeData => res.render('index.ejs', {animeData}))
             
 
-        })
+        // })
 
 
 
 app.get("/", (req, res) => {
-    db.collection("anime").find({}).toArray()
+    db.collection("anime").find().toArray()
     .then(data => {
-        console.log(data[0].animeId)
+        res.render("index.ejs", {info: data})
         
     })
     .catch(error => console.error(error))
@@ -115,10 +117,10 @@ app.post("/addAnime", (req, res) => {
 
 
 app.delete("/deleteAnime", (req, res) =>{
-    db.collection("anime").deleteOne({animeTitle: req.body.title})
+    db.collection("anime").deleteOne({animeTitle: req.body.animeTitleS})
     .then(result => {
-        console.log("Anime Deleted")
-        res.json("Anime Deleted")
+        console.log(`Anime Deleted`)
+        res.json(`Anime Deleted`)
     })
     .catch(error => console.error(error))
 })

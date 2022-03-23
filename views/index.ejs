@@ -11,37 +11,34 @@
     </head>        
       <body>  
         <h1>Sleepy Anime List</h1>
-        <ul class = "animeList">
-
-
-            <% for (let i = 0; i < animeData.length; i++) {%>
-                <li class = "anime">
-                <span><%= animeData[i].data.title %></span>
-                </li>
-<% } %>
-   
-       
-        </ul>
 
         <h2> Add an Anime:</h2>
 
-        <form id = "form" action ="/addAnime" method = "POST">
-            <input type ="text" placeholder = "ID" name = "id">
-            <input type ="text" placeholder = "Selector" name = "selector">
-            <input type ="text" placeholder = "Start Date" name = "startDate">
-            <input type ="submit">
-        </form>
-
-
-        <p></p>
-        <!-- <span id = "animeOrder">ID #</span> -->
         <input type ="text" placeholder = "Selector" id = "selector">
         <input type ="text" placeholder = "Start Date" id = "date">
         <input type ="text" placeholder = "Link here" id = "link">
         
         <button type = "button" id = "animeButton">Submit</button>
 
-        <h3>Anime stuff Here</h3>
+
+        <ul class = "animeList">
+
+
+            <% for (let i = 0; i < info.length; i++) {%>
+                <li class = "anime">
+                <span><img src = "<%= info[i].animeImgUrl%>"></span>
+                <span><%= info[i].animeTitle %></span>
+                <span><%= info[i].selector %></span>
+                <span><%= info[i].startDate %></span>
+                <span class = "del"> Delete</span>
+                </li>
+<% } %>
+   
+       
+        </ul>
+
+       
+
 
         
 
