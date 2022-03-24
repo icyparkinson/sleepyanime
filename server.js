@@ -4,10 +4,11 @@ const MongoClient = require("mongodb").MongoClient
 const PORT = 8000
 const axios = require("axios")
 const { response } = require("express")
+require ("dotenv").config()
 
 
 let db,
-    dbConnectionStr = "mongodb+srv://demo:demo@cluster0.8igav.mongodb.net/anime?retryWrites=true&w=majority",
+    dbConnectionStr = process.env.DBStringAnime,
     dbName = "anime"
 
     
