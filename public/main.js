@@ -57,10 +57,20 @@ async function addTitle(){
               "startDate" : animeDate,
               "selector" : animeSel,
            }) 
+          } 
+           ) 
+           window.location.reload(true)
           }
-           ) }
            postAnime()
+          
+
+           
+           
+
        })
+       
+
+       
     .catch(err => {
       console.log(`error ${err}`)
   })
