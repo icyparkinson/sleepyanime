@@ -6,7 +6,7 @@ const axios = require("axios")
 const { response } = require("express")
 require ("dotenv").config()
 
-
+//This connects the app to the MongoDB// 
 let db,
     dbConnectionStr = process.env.DBStringAnime,
     dbName = "anime"
@@ -25,69 +25,7 @@ app.use(express.urlencoded({ extended: true}))
 app.use(express.json())
 
 
-// THIS IS OLD CODE FROM LEON'S FORMAT
-// app.get("/", (req, res) => {
-//     res.sendFile(__dirname + "/index.html")
-// })
-
-// app.get("/", (req, res) => {
-//     db.collection("anime").find({}).toArray()
-//     .then(data => {
-//         console.log(data)
-         
-//         res.render("index.ejs", { info: data })
-        
-          
-//     })
-//     .catch(error => console.error(error))
-// })
-
-// =============================================================
-
-// THIS SUCCESSFULLY FETCHES TITLE FOR EJS TO USE AND PULLS MAL ID FROM DB!
-// app.get("/", (req,res) => {
-//         db.collection("anime").find({}).toArray()
-//             .then (data => {
-
-//                 for (let i = 0; i < data.length; i++){
-
-//                     let malID = data[i].animeId
-                    //  console.log(malID)
-                     
-            //     }
-            // })
-                
-            //          const fetchData = await axios.get(`https://api.jikan.moe/v4/anime/${malID}`)   
-            //             .then(anime => {
-                            
-            //                 animeData.push(anime.data.data.title)
-            //                 console.log(animeData)
-                        
-            //         })
-
-            //     } res.render ("index.ejs", { animeData })
-                
-            // })
-            // .catch(error => console.error(error))
-
-        //     let path = 'https://api.jikan.moe/v4/anime/'
-        //     let ids = ['1000', '1001', '1002']
-        //       .map(elt => 
-        //       new Promise((resolve, reject) => 
-        //       resolve(axios.get(path + elt)
-        //       .then(elt => elt.data)
-        //       )
-        //       )
-        //       )
-            
-        //     Promise.all(ids)
-        //       .then(animeData => res.render('index.ejs', {animeData}))
-            
-
-        // })
-
-
-
+//This is what loads when you open the app
 app.get("/", (req, res) => {
     db.collection("anime").find().toArray()
     .then(data => {
@@ -97,16 +35,7 @@ app.get("/", (req, res) => {
     .catch(error => console.error(error))
 })
 
-
-
-
-
-
-
-
-
-
-
+//This connects the post method to the database
 app.post("/addAnime", (req, res) => {
     db.collection("anime").insertOne(req.body)
     .then(result => {
@@ -116,7 +45,7 @@ app.post("/addAnime", (req, res) => {
     .catch(error => console.error(error))
 })
 
-
+//This connects the delete method to the database
 app.delete("/deleteAnime", (req, res) =>{
     db.collection("anime").deleteOne({animeTitle: req.body.animeTitleS})
     .then(result => {
@@ -125,7 +54,6 @@ app.delete("/deleteAnime", (req, res) =>{
     })
     .catch(error => console.error(error))
 })
-
 
 
 app.listen(process.env.PORT || PORT, () =>{

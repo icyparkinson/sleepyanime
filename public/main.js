@@ -1,3 +1,4 @@
+// DELETE BUTTON //
 const deleteText = document.querySelectorAll('.del')
 
 Array.from(deleteText).forEach((element)=>{
@@ -26,26 +27,31 @@ async function deleteAnime(){
 } 
 
 
-
+// ADD ANIME // 
 document.querySelector("#animeButton").addEventListener("click", addTitle)
 
 async function addTitle(){
 
+
+  //Get the MAL ID from the link
   console.log("clicked")
   let link = document.querySelector("#link").value
   console.log(link)
   let numberID = link.split("/")[4]
   console.log(numberID)
 
+  //Use the MAL ID to fetch from JIKAN API
   await fetch(`https://api.jikan.moe/v4/anime/${numberID}`)
 
     .then(res => res.json())
     .then(anime => {
 
+          // Set up variables to make things easier to read
           console.log(`${anime.data.title} added to database!`)
           let animeSel = document.querySelector("#selector").value
           let animeDate = document.querySelector("#date").value
           
+          // Create an async function to fetch
           async function postAnime(){
           await fetch("/addAnime", {
          
@@ -59,63 +65,14 @@ async function addTitle(){
            }) 
           } 
            ) 
+           // Refresh the page to see the new addition
            window.location.reload(true)
           }
            postAnime()
-          
-
-           
-           
-
        })
-       
-
        
     .catch(err => {
       console.log(`error ${err}`)
   })
 
 }
-
-
-
-// async function addNumber(){
-//     console.log("clicked")
-//     let link = document.querySelector("#link").value
-//     console.log(link)
-//     let numberID = link.split("/")[4]
-//     console.log(numberID)
-//     let animeSel = document.querySelector("#selector").value
-//     let animeDate = document.querySelector("#date").value
-     
-//      await fetch('/addAnime', {
-         
-//       method: 'POST',
-//       headers: {'Content-Type': 'application/json'},
-//       body: JSON.stringify({
-//         "animeId": numberID,
-//         "selector" : animeSel,
-//         "startDate" : animeDate,
-//      }) 
-//     }
-//      )}
-
-
-
-
-// function fetchMongo(){
-
-  
-//     fetch(`https://api.jikan.moe/v4/anime/${number}`)
-  
-//       .then(res => res.json())
-//       .then(anime => {
-//             console.log(anime.data.images.jpg.image_url)
-//             document.querySelector("img").src = anime.data.images.jpg.image_url
-//          })
-
-        
-//       .catch(err => {
-//         console.log(`error ${err}`)
-//     })
-//   }
