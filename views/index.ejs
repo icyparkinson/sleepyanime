@@ -5,7 +5,11 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=Press+Start+2P&family=Roboto&family=Source+Sans+Pro:wght@300;600&display=swap" rel="stylesheet"> 
+        
+        <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="data:;base64,=">
         <title>Sleepy's Anime List</title>
     </head>        
@@ -13,30 +17,40 @@
         <h1>Sleepy's Anime List</h1>
 
         <h2> Add an Anime:</h2>
-
-        <input type ="text" placeholder = "Selector" id = "selector">
-        <input type ="date" placeholder = "Start Date" id = "date">
-        <input type ="text" placeholder = "Link here" id = "link">
+        <section id="formy">
+            <input type ="text" placeholder = "Selector" id = "selector">
+            <input type ="date" placeholder = "Start Date" id = "date">
+            <input type ="text" placeholder = "Link here" id = "link">
         
         <button type = "button" id = "animeButton">Submit</button>
+        </section>
+
+        <section>
+            <table>
+              <tr>
+                <th class="numLeft">Number</th>
+                <th>Image</th>
+                <th>Title (English)</th>
+                <th>Alternative Title</th>
+                <th>Selector</th>
+                <th>Start Date</th>
+              </tr>
+              <% for (let i = 0; i < info.length; i++) {%>
+              <tr>
+                <td class="left">1</td>
+                <td class = imgTD><img src = "<%= info[i].animeImgUrl%>"></td>
+                <td><%= info[i].animeTitle %></td>
+                <td>SAO Alternative Gun Gale Online </td>
+                <td><%= info[i].selector %></td>
+                <td><%= info[i].startDate %></td>
+                <td class = "del">Delete</td>
+              </tr>
+              <% } %>
+            </table>
 
 
-        <ul class = "animeList">
 
 
-            <% for (let i = 0; i < info.length; i++) {%>
-                <li class = "anime">
-                <span><img src = "<%= info[i].animeImgUrl%>"></span>
-                <span><%= info[i].animeTitle %></span>
-                <span><%= info[i].selector %></span>
-                <span><%= info[i].startDate %></span>
-                <span></span>
-                <span class = "del"> Delete</span>
-                </li>
-<% } %>
-   
-       
-        </ul>
 
        
 

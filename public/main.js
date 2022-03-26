@@ -6,8 +6,8 @@ Array.from(deleteText).forEach((element)=>{
 })
 
 async function deleteAnime(){
-    const aniTitle = this.parentNode.childNodes[3].innerText
-    const stDate = this.parentNode.childNodes[7].innerText
+    const aniTitle = this.parentNode.childNodes[5].innerText
+    const stDate = this.parentNode.childNodes[11].innerText
     try{
         const response = await fetch('deleteAnime', {
             method: 'delete',
@@ -59,7 +59,7 @@ async function addTitle(){
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
               "animeTitle": anime.data.title,
-              "animeImgUrl" : anime.data.images.jpg.image_url,
+              "animeImgUrl" : anime.data.images.jpg.large_image_url,
               "startDate" : animeDate,
               "selector" : animeSel,
            }) 
