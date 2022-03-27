@@ -30,7 +30,7 @@ async function deleteAnime(){
           
 }
 
-
+let linkInput = document.querySelector("#link")
 // LISTENS FOR CLICK ON SUBMIT // 
 document.querySelector("#animeButton").addEventListener("click", addTitle)
 
