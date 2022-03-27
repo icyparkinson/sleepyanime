@@ -17,6 +17,8 @@
           <img src="images/sleepycookie.png" alt = "Sleepy eating cookie" id = "sleepycookie">
         <h1>Sleepy's Anime List</h1>
 
+        <a href="#sleepycookie"><img src = "images/scroll-up.png" alt="scroll up" id="scrollup"></a>
+
         
         <section id="formy">
             <form>
@@ -34,10 +36,10 @@
                 <th class="numLeft">#</th>
                 <th>Image</th>
                 <th>Title</th>
-                <th>Alternative Title</th>
-                <th>Selector</th>
-                <th>Start Date</th>
-                <th></th>
+                <th class = "altTitleCol">Alternative Title</th>
+                <th class="selCol">Selector</th>
+                <th class = "sDate">Start Date</th>
+                <th class="delCol"></th>
               </tr>
               <% for (let i = 0; i < info.length; i++) {%>
                 <tbody>
@@ -49,14 +51,15 @@
                 <% } %>
                 <td class = imgTD><img src = "<%= info[i].animeImgUrl%>"></td>
                 <td><a href="<%= info[i].animeURL%>" target = "_blank"><%= info[i].animeTitle %></a</td>
-                <td><%= info[i].altTitle %></td>
-                <td><%= info[i].selector %></td>
-                <td><%= info[i].startDate %></td>
-                <td class = "del"><img src="images/trash.png"></td>
+                <td class = "altTitleCol"><%= info[i].altTitle %></td>
+                <td class = "selCol"><%= info[i].selector %></td>
+                <td class="sDate"><%= info[i].startDate %></td>
+                <td class = "del delCol"><img src="images/trash.png"></td>
               </tr>
               </tbody>
               <% } %>
             </table>
+           
 
 
 
