@@ -84,7 +84,7 @@ async function addTitle(){
               "startDate" : animeDate,
               "selector" : animeSel,
               "animeURL" : anime.data.url,
-              "altTitle" : anime.data.title_english
+              "altTitle" : anime.data.title_english,
            }) 
           } 
            ) 
