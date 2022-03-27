@@ -12,13 +12,14 @@
   
   <ul>
     <li>How to use the different methods of CRUD to get, post, update, and delete entries into the MongoDB</li>
-    <li>How to use EJS templates</li>
+    <li>How to use EJS templates and understand its syntax</li>
     <li>How to use async/await and promises to make the app asynchronous</li>
     <li>Better understanding of ports and localhost</li>
     <li>How to work with Node.js and use NPM to install packages and dependencies</li>
     <li>How to use axios in Node.js to fetch from an API</li>
     <li>How to host a backend server onto Heroku</li>
     <li>How to sort a list by date</li>
+    <li>How to implement confirmation check for deleting lines</li>
    </ul>
 
 <h2>Package Dependencies</h2>

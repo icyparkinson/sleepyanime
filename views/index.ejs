@@ -30,17 +30,22 @@
         <section>
             <table>
               <tr>
-                <th class="numLeft">Number</th>
+                <th class="numLeft">#</th>
                 <th>Image</th>
                 <th>Title (English)</th>
                 <th>Alternative Title</th>
                 <th>Selector</th>
                 <th>Start Date</th>
+                <th></th>
               </tr>
               <% for (let i = 0; i < info.length; i++) {%>
                 <tbody>
-              <tr>
-                <td class="left numID"><%= i+1 %></td>
+              <tr class = row>
+                  <% if (i == 0) { %>
+                        <td class="specialLeft numID"><%= i+1 %></td>
+                <% } else {%>
+                        <td class="left numID"><%= i+1 %></td>
+                <% } %>
                 <td class = imgTD><img src = "<%= info[i].animeImgUrl%>"></td>
                 <td><a href="<%= info[i].animeURL%>" target = "_blank"><%= info[i].animeTitle %></a</td>
                 <td><%= info[i].altTitle %></td>
