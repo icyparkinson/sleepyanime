@@ -27,7 +27,7 @@ app.use(express.json())
 
 //This is what loads when you open the app
 app.get("/", (req, res) => {
-    db.collection("anime").find().toArray()
+    db.collection("anime").find().sort({startDate: -1}).toArray()
     .then(data => {
         res.render("index.ejs", {info: data})
         

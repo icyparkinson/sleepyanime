@@ -18,6 +18,7 @@
     <li>How to work with Node.js and use NPM to install packages and dependencies</li>
     <li>How to use axios in Node.js to fetch from an API</li>
     <li>How to host a backend server onto Heroku</li>
+    <li>How to sort a list by date</li>
    </ul>
 
 <h2>Package Dependencies</h2>

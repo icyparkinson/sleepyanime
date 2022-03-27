@@ -20,6 +20,17 @@
   h1{
     text-align: center;
   }
+
+  #add{
+      display: inline;
+      font-weight: bold;
+      padding-right: 20px;
+  }
+
+  #formy{
+    text-align: center;
+    display: inline;
+  }
   
   table{
   /*   border: 1px solid yellow; */
@@ -27,6 +38,7 @@
     margin: 0 auto;
     width: 80%;
     border-spacing: 0 15px;
+    /* border-collapse: collapse; */
   }
   
   th{
@@ -35,8 +47,25 @@
   }
   
   td{
-    background: rgb(33,33,33);
+    /* background: rgb(33,33,33); */
   }
+
+  td a{
+    color: rgb(165,165,165)
+  }
+
+  tbody{
+      background-color: rgb(33,33,33);
+  }
+
+  tbody:hover{
+      background-color: rgb(78, 71, 71);
+  }
+
+  .row:hover{
+    color: white;
+}
+
   .numLeft{
     border-left: 5px solid blue;
   }
@@ -53,6 +82,15 @@
   
   .imgTD{
     width: 140px;
+  }
+
+  .del img{
+    width: 50px;
+  }
+
+  .del img:hover{
+      cursor: pointer;
+      content:url("images/trash-red.png")
   }
   
   

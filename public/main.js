@@ -8,31 +8,52 @@ Array.from(deleteText).forEach((element)=>{
 async function deleteAnime(){
     const aniTitle = this.parentNode.childNodes[5].innerText
     const stDate = this.parentNode.childNodes[11].innerText
-    try{
-        const response = await fetch('deleteAnime', {
-            method: 'delete',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-              'animeTitleS': aniTitle,
-              'startDateS': stDate
-            })
-          })
-        const data = await response.json()
-        console.log(data)
-        window.location.reload(true)
+    let check = confirm("Are you sure you want to delete this anime?")
+    if (check == true){
+              try{
+                  const response = await fetch('deleteAnime', {
+                      method: 'delete',
+                      headers: {'Content-Type': 'application/json'},
+                      body: JSON.stringify({
+                        'animeTitleS': aniTitle,
+                        'startDateS': stDate
+                      })
+                    })
+                  const data = await response.json()
+                  console.log(data)
+                  window.location.reload(true)
 
-    }catch(err){
-        console.log(err)
-    }
-} 
+              }catch(err){
+                  console.log(err)
+              }
+          } 
+          
+}
 
 
-// ADD ANIME // 
+// LISTENS FOR CLICK ON SUBMIT // 
 document.querySelector("#animeButton").addEventListener("click", addTitle)
 
+// ALLOWS USER TO PRESS ENTER KEY TO SUBMIT //
+
+linkInput.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13){
+    addTitle()
+  }
+})
+
+// ADD ANIME //
+
+//Check input values to make sure something is there
+
+// if (linkInput.innerText === "0"){
+//   alert("Please enter a link from My Anime List.")
+// }
+
+// else{
+
+
 async function addTitle(){
-
-
   //Get the MAL ID from the link
   console.log("clicked")
   let link = document.querySelector("#link").value
@@ -59,9 +80,11 @@ async function addTitle(){
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
               "animeTitle": anime.data.title,
-              "animeImgUrl" : anime.data.images.jpg.large_image_url,
+              "animeImgUrl" : anime.data.images.jpg.image_url,
               "startDate" : animeDate,
               "selector" : animeSel,
+              "animeURL" : anime.data.url,
+              "altTitle" : anime.data.title_english
            }) 
           } 
            ) 

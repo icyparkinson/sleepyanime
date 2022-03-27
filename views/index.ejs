@@ -16,13 +16,15 @@
       <body>  
         <h1>Sleepy's Anime List</h1>
 
-        <h2> Add an Anime:</h2>
+        
         <section id="formy">
+            <form>
+                <span id="add"> Add an Anime: </span>
             <input type ="text" placeholder = "Selector" id = "selector">
             <input type ="date" placeholder = "Start Date" id = "date">
-            <input type ="text" placeholder = "Link here" id = "link">
-        
-        <button type = "button" id = "animeButton">Submit</button>
+            <input type ="text" placeholder = "MAL link here" id = "link">
+            <button type = "button" id = "animeButton">Submit</button>
+        </form>
         </section>
 
         <section>
@@ -36,15 +38,17 @@
                 <th>Start Date</th>
               </tr>
               <% for (let i = 0; i < info.length; i++) {%>
+                <tbody>
               <tr>
-                <td class="left">1</td>
+                <td class="left numID"><%= i+1 %></td>
                 <td class = imgTD><img src = "<%= info[i].animeImgUrl%>"></td>
-                <td><%= info[i].animeTitle %></td>
-                <td>SAO Alternative Gun Gale Online </td>
+                <td><a href="<%= info[i].animeURL%>" target = "_blank"><%= info[i].animeTitle %></a</td>
+                <td><%= info[i].altTitle %></td>
                 <td><%= info[i].selector %></td>
                 <td><%= info[i].startDate %></td>
-                <td class = "del">Delete</td>
+                <td class = "del"><img src="images/trash.png"></td>
               </tr>
+              </tbody>
               <% } %>
             </table>
 
