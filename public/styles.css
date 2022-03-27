@@ -13,7 +13,7 @@
   
   html{
     color: rgb(202, 199, 199);
-    background: rgb(21,21,21);
+    background: rgb(32, 34, 37);
     font-family: "Source Sans Pro"; 
     scroll-behavior: smooth;
   }
@@ -39,6 +39,15 @@
   #formy{
     text-align: center;
     display: inline;
+    line-height: 30px;
+  }
+
+  #date{
+      color: rgb(128,128,128);
+  }
+
+  #selector{
+      max-width: 20%;
   }
   
   table{
@@ -58,16 +67,15 @@
   }
   
   td{
-    /* background: rgb(33,33,33); */
     padding: 0 20px;
   }
 
-  td a{
+  td a, footer a{
     color: rgb(165,165,165)
   }
 
   tbody{
-      background-color: rgb(33,33,33);
+      background-color: rgb(52	54	60	);
   }
 
   tbody:hover{
@@ -109,9 +117,19 @@
 
   #scrollup{
       position: fixed;
-      right: 5px;
+      right: 15px;
       top: 90%;
       max-width: 70px;
+  }
+
+  footer{
+      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 30px;
+  }
+
+  footer a{
+      text-decoration: none;
   }
   
   /******************************************
@@ -121,7 +139,11 @@
   @media screen and (max-width: 1000px){
     .altTitleCol{
         display: none;
-}
+        }
+
+    #add{
+        font-size: 1.3rem;
+    }
   }
 
   @media screen and (max-width: 800px){
@@ -129,10 +151,19 @@
           display:none;
       }
 
+      #add{
+          display:block;
+      }
+
   }
 
   @media screen and (max-width: 650px){
       .selCol, .delCol{
           display:none;
+      }
+
+      #animeButton{
+          display: block;
+          margin: 10px auto 10px auto;
       }
   }
