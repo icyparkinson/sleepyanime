@@ -1,4 +1,4 @@
-  <img src = "#">
+  <img src = "public/images/sleepyanime-img.png">
   
   <h2>Overview</h2>
   
@@ -28,6 +28,9 @@ axios, cors, dotenv, ejs, express, heroku, mongodb
 <h2>Future Update Plans:</h2>
     <ul>
         <li>Add a login function so that each user can have their own anime list</li>
+        <li>Add a search function</li>
+        <li>Make "currently watching" more unique</li>
+        <li>Implement "sort by" option by clicking on the column heads</li>
     </ul>
 
 
