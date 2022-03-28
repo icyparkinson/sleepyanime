@@ -99,22 +99,32 @@ function searchAnime(){
   let searchInput = document.getElementById("searchBar").value
   searchInput = searchInput.toLowerCase()
 
+  let searchFor = document.querySelector("input[name='searchFor']:checked").value 
+
   let x = document.getElementsByClassName("searchVal")
   let y = document.getElementsByClassName("altTitleCol")
+  let z = document.getElementsByClassName("selCol")
 
+if (searchFor === "forTitle"){
   for (let i = 0; i < x.length; i++){
     x[i].parentNode.parentNode.style.display="contents"
     if (!x[i].innerHTML.toLowerCase().includes(searchInput)){
       x[i].parentNode.parentNode.style.display="none"
     }
-    // else if (!y[i].innerHTML.toLowerCase().includes(searchInput)){
-    //   y[i].parentNode.parentNode.style.display="none"
-    // }
-    // else{
-    //   x[i].style.display="content"
-    // }
+  }
+} else if (searchFor === "forSel"){
+  for (let i = 0; i < z.length; i++){
+    z[i].parentNode.parentNode.style.display="contents"
+    if (!z[i].innerHTML.toLowerCase().includes(searchInput)){
+      z[i].parentNode.parentNode.style.display="none"
+    }
   }
 }
+
+  
+}
+
+
 
 // let searchInput = document.getElementById("searchBar")
 // let namesFromDom = document.getElementsByClassName("searchVal")

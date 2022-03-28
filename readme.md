@@ -20,6 +20,7 @@
     <li>How to host a backend server onto Heroku</li>
     <li>How to sort a list by date</li>
     <li>How to implement confirmation check for deleting lines</li>
+    <li>How to add a search function to show only desired results</li>
    </ul>
 
 <h2>Package Dependencies</h2>
@@ -28,7 +29,7 @@ axios, cors, dotenv, ejs, express, heroku, mongodb
 <h2>Future Update Plans:</h2>
     <ul>
         <li>Add a login function so that each user can have their own anime list</li>
-        <li>Add a search function</li>
+        <li>Add a search function for selectors</li>
         <li>Make "currently watching" more unique</li>
         <li>Implement "sort by" option by clicking on the column heads</li>
     </ul>
