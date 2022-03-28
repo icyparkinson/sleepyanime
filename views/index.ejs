@@ -12,16 +12,18 @@
         <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="data:;base64,=">
         <title>Sleepy's Anime List</title>
-    </head>        
-      <body>  
-          <img src="images/sleepycookie.png" alt = "Sleepy eating cookie" id = "sleepycookie">
+    </head>
+    <body>       
+      <img src="images/sleepycookie.png" alt = "Sleepy eating cookie" id = "sleepycookie">
         <h1>Sleepy's Anime List</h1>
-
+        
         <a href="#sleepycookie"><img src = "images/scroll-up.png" alt="scroll up" id="scrollup"></a>
-
+       
+        <form>
+          <input type = "text" placeholder="Search..." id = "searchBar" onkeyup="searchAnime()" name = "search">
+        </form>
         
         <section id="formy">
-            <form>
                 <span id="add"> Add an Anime: </span>
             <input type ="text" placeholder = "Selector" id = "selector">
             <input type ="date" placeholder = "Start Date" id = "date">
@@ -29,6 +31,8 @@
             <button type = "button" id = "animeButton">Submit</button>
         </form>
         </section>
+
+        
 
         <section>
             <table>
@@ -50,7 +54,7 @@
                         <td class="left numID"><%= i+1 %></td>
                 <% } %>
                 <td class = imgTD><img src = "<%= info[i].animeImgUrl%>"></td>
-                <td><a href="<%= info[i].animeURL%>" target = "_blank"><%= info[i].animeTitle %></a</td>
+                <td class = "searchVal"><a href="<%= info[i].animeURL%>" target = "_blank"><%= info[i].animeTitle %></a</td>
                 <td class = "altTitleCol"><%= info[i].altTitle %></td>
                 <td class = "selCol"><%= info[i].selector %></td>
                 <td class="sDate"><%= info[i].startDate %></td>

@@ -44,14 +44,6 @@ linkInput.addEventListener("keyup", function(event) {
 
 // ADD ANIME //
 
-//Check input values to make sure something is there
-
-// if (linkInput.innerText === "0"){
-//   alert("Please enter a link from My Anime List.")
-// }
-
-// else{
-
 
 async function addTitle(){
   //Get the MAL ID from the link
@@ -99,3 +91,47 @@ async function addTitle(){
   })
 
 }
+
+
+// SEARCH BAR //
+
+function searchAnime(){
+  let searchInput = document.getElementById("searchBar").value
+  searchInput = searchInput.toLowerCase()
+
+  let x = document.getElementsByClassName("searchVal")
+  let y = document.getElementsByClassName("altTitleCol")
+
+  for (let i = 0; i < x.length; i++){
+    x[i].parentNode.parentNode.style.display="contents"
+    if (!x[i].innerHTML.toLowerCase().includes(searchInput)){
+      x[i].parentNode.parentNode.style.display="none"
+    }
+    // else if (!y[i].innerHTML.toLowerCase().includes(searchInput)){
+    //   y[i].parentNode.parentNode.style.display="none"
+    // }
+    // else{
+    //   x[i].style.display="content"
+    // }
+  }
+}
+
+// let searchInput = document.getElementById("searchBar")
+// let namesFromDom = document.getElementsByClassName("searchVal")
+
+// searchInput.addEventListener("keyup"),(event) => {
+//   const { value } = event.target
+
+//   const searchQuery = value.toLowerCase()
+
+//   for (const nameElement of namesFromDom){
+//     let name = nameElement.textContent.toLowerCase()
+
+//     if (name.includes(searchQuery)){
+//       nameElement.style.display = "block"
+//     }
+//     else{
+//       nameElement.style.display = "none"
+//     }
+//   }
+// }

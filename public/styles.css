@@ -38,8 +38,9 @@
 
   #formy{
     text-align: center;
-    display: inline;
+    /* display: inline; */
     line-height: 30px;
+    margin: 0 auto;
   }
 
   #date{
@@ -131,6 +132,26 @@
   footer a{
       text-decoration: none;
   }
+  /******************************************
+  /* SEARCH BAR
+  /*******************************************/
+
+  #searchBar{
+    display: block;
+    border-radius: 10px;
+    padding-left: 10px;
+    width: 10%;
+    -webkit-transition: width 0.15s ease-in-out;
+    transition: width 0.15s ease-in-out;
+    text-align: center;
+    margin: 0 auto 20px auto;
+  }
+
+ #searchBar:focus {
+   width: 30%;
+ }
+
+
   
   /******************************************
   /* MEDIA QUERIES
