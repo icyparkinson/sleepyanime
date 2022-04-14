@@ -1,86 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=Press+Start+2P&family=Roboto&family=Source+Sans+Pro:wght@300;600&display=swap" rel="stylesheet"> 
-        
-        <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="data:;base64,=">
-        <title>Sleepy's Anime List</title>
-    </head>
-    <body>       
-      <img src="images/sleepycookie.png" alt = "Sleepy eating cookie" id = "sleepycookie">
-        <h1>Sleepy's Anime List</h1>
-        
-        <a href="#sleepycookie"><img src = "images/scroll-up.png" alt="scroll up" id="scrollup"></a>
-       
-        <form>
-          <input type = "text" placeholder="Search..." id = "searchBar" onkeyup="searchAnime()" name = "search">
-          <input type = "radio" id = "searchForTitle" name = "searchFor" value = "forTitle" checked><label for = "searchForTitle">by Title</label></label>
-          <input type = "radio" id = "searchForSel" name = "searchFor" value = "forSel"><label for = "searchForSel">by Selector</label></label>
-        </form>
-        
-        <section id="formy">
-                <span id="add"> Add an Anime: </span>
-            <input type ="text" placeholder = "Selector" id = "selector">
-            <input type ="date" placeholder = "Start Date" id = "date">
-            <input type ="text" placeholder = "MAL link here" id = "link">
-            <button type = "button" id = "animeButton">Submit</button>
-        </form>
-        </section>
-
-        
-
-        <section>
-            <table>
-              <tr>
-                <th class="numLeft">#</th>
-                <th>Image</th>
-                <th>Title</th>
-                <th class = "altTitleCol">Alternative Title</th>
-                <th class="selCol">Selector</th>
-                <th class = "sDate">Start Date</th>
-                <th class="delCol"></th>
-              </tr>
-              <% for (let i = 0; i < info.length; i++) {%>
-                <tbody>
-              <tr class = row>
-                  <% if (i == 0) { %>
-                        <td class="specialLeft numID"><%= i+1 %></td>
-                <% } else {%>
-                        <td class="left numID"><%= i+1 %></td>
-                <% } %>
-                <td class = imgTD><img src = "<%= info[i].animeImgUrl%>"></td>
-                <td class = "searchVal"><a href="<%= info[i].animeURL%>" target = "_blank"><%= info[i].animeTitle %></a</td>
-                <td class = "altTitleCol"><%= info[i].altTitle %></td>
-                <td class = "selCol"><%= info[i].selector %></td>
-                <td class="sDate"><%= info[i].startDate %></td>
-                <td class = "del delCol"><img src="images/trash.png"></td>
-              </tr>
-              </tbody>
-              <% } %>
-            </table>
-           
-            <footer>
-                <span> &copy; <a href="https://www.twitch.tv/irollsleepy/" target="_blank">SleepyFox 2022</a></span>
-            </footer>
-
-
-
-
-
-       
-
-
-        
-
-  
-
-        <script src ="main.js"></script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Create Your VERY OWN Anime list!</h1>
+    <a href="/login"> Login</a>
+    <a href="/signup"> Signup</a>
+</body>
 </html>

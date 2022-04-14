@@ -77,6 +77,7 @@ async function addTitle(){
               "selector" : animeSel,
               "animeURL" : anime.data.url,
               "altTitle" : anime.data.title_english,
+              "animeTime" : anime.time,
            }) 
           } 
            ) 

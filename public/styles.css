@@ -17,6 +17,12 @@
     font-family: "Source Sans Pro"; 
     scroll-behavior: smooth;
   }
+
+  #watchTime{
+    display: block;
+    padding-top: 20px;
+    text-align: center;
+  }
   
   #sleepycookie{
       margin-top: 50px;
