@@ -39,6 +39,7 @@
     width: 40%;
     height: 400px;
     align-items: center;
+    margin-bottom: 50px;
   }
   
   .banRight img{
@@ -68,6 +69,44 @@
     padding: 20px;
     margin: 30px;
     font-size: 2rem;
+    border-radius: 20px;
+  }
+
+  .banBut button:hover{
+    cursor:pointer;
+  }
+
+  .loginBut{
+    background: rgb(246, 232, 109);
+  }
+
+  .loginBut:hover{
+    background: rgb(254, 242, 8);
+  }
+
+  .signupBut{
+    background: green;
+    color: white;
+  }
+
+  .signupBut:hover{
+    background: rgb(18, 172, 18);
+  }
+
+  .formh1{
+    margin-top: 40px;
+  }
+
+  .formOrg{
+    text-align: center;
+  }
+
+  .forms{
+    text-align: center;
+  }
+
+  .formP{
+    text-align: center;
   }
   
   
