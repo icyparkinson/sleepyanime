@@ -6,6 +6,70 @@
 *{
     box-sizing: border-box;
   }
+
+
+/******************************************
+/* FRONT PAGE
+/*******************************************/
+
+
+  #banSec{
+    margin: 100px auto;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    /* border: 1px solid yellow */
+  }
+  
+  .banLeft{
+    width: 60%;
+    /* border: 1px solid red; */
+    text-align: right;
+    padding: 20px;
+  }
+  
+  .banLeft p{
+    font-size: 2rem;
+  }
+  
+  .banRight{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid blue; */
+    width: 40%;
+    height: 400px;
+    align-items: center;
+  }
+  
+  .banRight img{
+    max-height: 80%;
+  }
+  
+  .banner{
+    font-size: 7rem;
+    display: inline;
+  }
+  
+  .wewa{
+    color: yellow;
+  }
+  
+  .tog{
+    color: green;
+  }
+
+  .banBut{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .banBut button{
+    padding: 20px;
+    margin: 30px;
+    font-size: 2rem;
+  }
+  
   
   /******************************************
   /* LAYOUT
@@ -25,15 +89,14 @@
   }
 
   nav{
-    text-align: right;
-    margin-right: 20px;
+    text-align: right;  
     margin-top: 20px;
   }
 
-  .logout{
+  .links{
     color:rgb(202, 199, 199);
-    width: 100%;
-    text-align: right;
+    margin-right: 20px;
+
     }
   
   #sleepycookie{
