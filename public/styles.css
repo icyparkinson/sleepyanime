@@ -18,12 +18,12 @@
     display: flex;
     align-items: center;
     width: 90%;
-    /* border: 1px solid yellow */
+    border: 1px solid yellow
   }
   
   .banLeft{
     width: 60%;
-    /* border: 1px solid red; */
+    border: 1px solid red;
     text-align: right;
     padding: 20px;
   }
@@ -35,7 +35,7 @@
   .banRight{
     display: flex;
     flex-direction: column;
-    /* border: 1px solid blue; */
+    border: 1px solid blue;
     width: 40%;
     height: 400px;
     align-items: center;
@@ -97,18 +97,54 @@
     margin-top: 40px;
   }
 
-  .formOrg{
-    text-align: center;
-  }
-
-  .forms{
-    text-align: center;
-  }
-
-  .formP{
+  .formOrg, .forms, .formP{
     text-align: center;
   }
   
+
+    /******************************************
+  /* MEDIA QUERIES
+  /*******************************************/
+  
+  @media screen and (max-width: 1300px){
+  .banner{
+    font-size: 5rem;
+  }
+
+  .banBut button{
+    padding: 10px;
+    margin: 15px;
+    font-size: 1.5rem;
+    border-radius: 20px;
+  }
+}
+
+@media screen and (max-width: 1100px){
+  #banSec{
+    flex-direction: column;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .banLeft{
+    width: 100%;
+    text-align: center;
+  }
+  .banLeft p{
+    font-size: 1.5rem;
+  }
+
+  .banRight{
+    width: 60%;
+  }
+
+  .banRight img{
+    max-width: 100%;
+    max-height: auto;
+  }
+}
+
+
   
   /******************************************
   /* LAYOUT
@@ -315,3 +351,6 @@ form{
           margin: 10px auto 10px auto;
       }
   }
+
+
+
