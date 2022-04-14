@@ -45,7 +45,7 @@
                 <th class = "sDate">Start Date</th>
                 <th class="delCol"></th>
               </tr>
-              <% for (let i = 0; i < info.length; i++) {%>
+              <% for (let i = 0; i < animes.length; i++) {%>
                 <tbody>
               <tr class = row>
                   <% if (i == 0) { %>
@@ -53,11 +53,11 @@
                 <% } else {%>
                         <td class="left numID"><%= i+1 %></td>
                 <% } %>
-                <td class = imgTD><img src = "<%= info[i].animeImgUrl%>"></td>
-                <td class = "searchVal"><a href="<%= info[i].animeURL%>" target = "_blank"><%= info[i].animeTitle %></a</td>
-                <td class = "altTitleCol"><%= info[i].altTitle %></td>
-                <td class = "selCol"><%= info[i].selector %></td>
-                <td class="sDate"><%= info[i].startDate %></td>
+                <td class = imgTD><img src = "<%= animes[i].animeImgUrl%>"></td>
+                <td class = "searchVal"><a href="<%= animes[i].animeURL%>" target = "_blank"><%= animes[i].animeTitle %></a</td>
+                <td class = "altTitleCol"><%= animes[i].altTitle %></td>
+                <td class = "selCol"><%= animes[i].selector %></td>
+                <td class="sDate"><%= animes[i].startDate %></td>
                 <td class = "del delCol"><img src="images/trash.png"></td>
               </tr>
               </tbody>

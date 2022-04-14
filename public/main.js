@@ -66,7 +66,7 @@ async function addTitle(){
           
           // Create an async function to fetch
           async function postAnime(){
-          await fetch("/addAnime", {
+          await fetch("/animes/addAnime", {
          
             method: 'POST',
             headers: {'Content-Type': 'application/json'},

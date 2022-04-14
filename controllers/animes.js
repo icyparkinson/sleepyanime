@@ -13,7 +13,14 @@ module.exports = {
 
     addAnime: async (req, res)=>{
         try{
-            await Anime.create({todo: req.body.todoItem, userId: req.user.id})
+            await Anime.create({
+                animeTitle: req.body.animeTitle, 
+                animeImgUrl : req.body.animeImgUrl,
+                startDate : req.body.startDate,
+                selector : req.body.selector,
+                animeURL : req.body.animeURL,
+                altTitle : req.body.altTitle,
+                userId: req.user.id})
             console.log('Anime has been added!')
             res.redirect('/animes')
         }catch(err){
@@ -24,8 +31,8 @@ module.exports = {
 
     deleteAnime: async (req, res)=>{
         try{
-            await Anime.findOneAndDelete({animeTitle: req.body.animeTitleS})
-            console.log('Deleted Todo')
+            await Anime.findOneAndDelete({_id:req.body.todoIdFromJSFile})
+            console.log('Deleted Anime')
             res.json('Deleted It')
         }catch(err){
             console.log(err)
