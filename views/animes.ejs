@@ -47,7 +47,7 @@
               </tr>
               <% for (let i = 0; i < animes.length; i++) {%>
                 <tbody>
-              <tr class = row>
+              <tr class = row data-id="<%= animes[i]._id %>">
                   <% if (i == 0) { %>
                         <td class="specialLeft numID"><%= i+1 %></td>
                 <% } else {%>

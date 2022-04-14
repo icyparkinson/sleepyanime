@@ -6,17 +6,15 @@ Array.from(deleteText).forEach((element)=>{
 })
 
 async function deleteAnime(){
-    const aniTitle = this.parentNode.childNodes[5].innerText
-    const stDate = this.parentNode.childNodes[11].innerText
+    const animeID = this.parentNode.dataset.id
     let check = confirm("Are you sure you want to delete this anime?")
     if (check == true){
               try{
-                  const response = await fetch('deleteAnime', {
+                  const response = await fetch('animes/deleteAnime', {
                       method: 'delete',
                       headers: {'Content-Type': 'application/json'},
                       body: JSON.stringify({
-                        'animeTitleS': aniTitle,
-                        'startDateS': stDate
+                        'dbID': animeID
                       })
                     })
                   const data = await response.json()
@@ -67,6 +65,8 @@ async function addTitle(){
           // Create an async function to fetch
           async function postAnime(){
           await fetch("/animes/addAnime", {
+
+
          
             method: 'POST',
             headers: {'Content-Type': 'application/json'},

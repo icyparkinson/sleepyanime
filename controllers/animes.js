@@ -30,10 +30,12 @@ module.exports = {
 
 
     deleteAnime: async (req, res)=>{
+        console.log(`${req.body.dbID}`)
         try{
-            await Anime.findOneAndDelete({_id:req.body.todoIdFromJSFile})
-            console.log('Deleted Anime')
-            res.json('Deleted It')
+            await Anime.findOneAndDelete({_id:req.body.dbID})
+            console.log("Deleted anime")
+            console.log(`${req.body.dbID}`)
+            res.json(`Deleted It`)
         }catch(err){
             console.log(err)
         }

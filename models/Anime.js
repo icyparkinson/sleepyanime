@@ -15,7 +15,7 @@ const AnimeSchema = new mongoose.Schema({
   },
   selector: {
     type: String,
-    required: true,
+    required: false,
   },
   animeURL: {
     type: String,
@@ -23,7 +23,7 @@ const AnimeSchema = new mongoose.Schema({
   },
   altTitle: {
     type: String,
-    required: true,
+    required: false,
   },
   userId: {
     type: String,
