@@ -18,12 +18,12 @@
     display: flex;
     align-items: center;
     width: 90%;
-    border: 1px solid yellow
+    /* border: 1px solid yellow */
   }
   
   .banLeft{
     width: 60%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     text-align: right;
     padding: 20px;
   }
@@ -35,7 +35,7 @@
   .banRight{
     display: flex;
     flex-direction: column;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 40%;
     height: 400px;
     align-items: center;
