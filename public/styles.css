@@ -23,6 +23,18 @@
     padding-top: 20px;
     text-align: center;
   }
+
+  nav{
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+
+  .logout{
+    color:rgb(202, 199, 199);
+    width: 100%;
+    text-align: right;
+    }
   
   #sleepycookie{
       margin-top: 50px;

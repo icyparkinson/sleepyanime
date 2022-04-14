@@ -11,11 +11,15 @@
         
         <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="data:;base64,=">
-        <title>Sleepy's Anime List</title>
+        <title><%= user.userName %>'s Anime List</title>
     </head>
-    <body>       
+    <body>
+      <nav>
+      <a href="/logout" class = "logout">Logout</a>
+      </nav>
+    
       <img src="images/sleepycookie.png" alt = "Sleepy eating cookie" id = "sleepycookie">
-        <h1>Sleepy's Anime List</h1>
+        <h1><%= user.userName %>'s Anime List</h1>
         
         <a href="#sleepycookie"><img src = "images/scroll-up.png" alt="scroll up" id="scrollup"></a>
        
