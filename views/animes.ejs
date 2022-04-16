@@ -52,6 +52,8 @@
               <% for (let i = 0; i < animes.length; i++) {%>
                 <tbody>
               <tr class = row data-id="<%= animes[i]._id %>">
+                
+
                   <% if (i == 0) { %>
                         <td class="specialLeft numID"><%= i+1 %></td>
                 <% } else {%>
@@ -67,6 +69,11 @@
               </tbody>
               <% } %>
             </table>
+
+            <% if (animes.length === 0) { %>
+              <p class="info">Your list is empty! Simply fill out the form above to begin building your list! A selector is optional if you want to include an additional parameter to filter by. Add in the date you started the anime and find a URL for an anime from <a href="https://myanimelist.net/" target="_blank">MyAnimeList</a> and you're on your way!</p>
+              <% } else {%>
+            <% } %>
            
             <footer>
                 <span> &copy; <a href="https://www.twitch.tv/irollsleepy/" target="_blank">SleepyFox 2022</a></span>

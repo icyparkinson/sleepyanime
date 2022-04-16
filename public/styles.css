@@ -272,6 +272,17 @@
       content:url("images/trash-red.png")
   }
 
+  .info{
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .info a{
+    color:rgb(202, 199, 199);
+  }
+
   #scrollup{
       position: fixed;
       right: 15px;
