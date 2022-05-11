@@ -2,7 +2,7 @@
   
   <h2>Overview</h2>
   
-  This is my first full stack CRUD application! I watch anime with a group of friends every Sunday and we take turns selecting and voting on which anime to watch. I decided to create this app to keep track of all the animes we've watched together and make it easy for us to update it. I utilized the Jikan API to gather information and images on all the anime shown.
+  This is a full stack CRUD application. I watch anime with a group of friends every Sunday and we take turns selecting and voting on which anime to watch. I decided to create this app to keep track of all the animes we've watched together and make it easy for us to update it. I utilized the Jikan API to gather information and images on all the anime shown.
   
   <h2>How It Works</h2>
  Simply type in the name of the user, the date the anime was started, and the MyAnimeList link for the anime, press submit, and it will get entered into the database. The app will use the link to determine the MyAnimeList ID. This ID can then be used to fetch information from the Jikan API and it gets stored onto MongoDB. When the page loads, it renders everything from the database into a nice list to view and admire.
