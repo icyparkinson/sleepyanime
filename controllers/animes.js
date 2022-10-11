@@ -9,7 +9,7 @@ module.exports = {
             console.log(err)
         }
     },
-
+ 
 
     addAnime: async (req, res)=>{
         try{

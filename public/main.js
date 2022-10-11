@@ -124,25 +124,3 @@ if (searchFor === "forTitle"){
 
   
 }
-
-
-
-// let searchInput = document.getElementById("searchBar")
-// let namesFromDom = document.getElementsByClassName("searchVal")
-
-// searchInput.addEventListener("keyup"),(event) => {
-//   const { value } = event.target
-
-//   const searchQuery = value.toLowerCase()
-
-//   for (const nameElement of namesFromDom){
-//     let name = nameElement.textContent.toLowerCase()
-
-//     if (name.includes(searchQuery)){
-//       nameElement.style.display = "block"
-//     }
-//     else{
-//       nameElement.style.display = "none"
-//     }
-//   }
-// }
